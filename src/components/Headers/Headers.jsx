@@ -1,10 +1,10 @@
 import React from "react";
 import MainHeader from "./MainHeader";
-import Header from "./Header";
+import Header from "./TopHeader";
 
 const Headers = () => {
   return (
-    <div>
+    <div className="m-2">
       <Header />
       <MainHeader />
     </div>

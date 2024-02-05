@@ -46,15 +46,19 @@ const infos = [
     content: "Delhi, India",
   },
 ];
-const Header = () => {
+const TopHeader = () => {
   return (
-    <div className="flex justify-between">
+    <div className="flex m-2 p-2 justify-between">
       <span className="flex">
         <HeaderIcon />
-        <button>PLACE WISE</button>
+        <button>
+          <span className="text-blue-600 text-2xl">PLACE</span>
+          <span className="text-orange-600 text-2xl">WISE</span>
+        </button>
       </span>
       {infos.map((info) => (
         <HeaderInfo
+          key={info.title}
           title={info.title}
           icon={{ ...info.icon }}
           content={info.content}
@@ -65,4 +69,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default TopHeader;
