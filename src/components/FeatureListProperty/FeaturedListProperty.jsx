@@ -1,9 +1,8 @@
 import React from "react";
-import Button from "../../UI/Button";
-import Card from "../../UI/Card";
-import CategoryItem from "./CategoryItem";
+import FeaturedList from "./FeatureList";
 import CustomHeader from "../../UI/CustomHeader";
-const categoryItems = [
+import Button from "../../UI/Button";
+const FeaturedListPropertyItems = [
   {
     icon: {},
     title: "Industrial",
@@ -40,32 +39,40 @@ const categoryItems = [
     content: "A villa is a type of large, luxurious house that is typically",
   },
 ];
-const Category = () => {
+const buttonList = ["New York", "Mumbai", "Paris", "London"];
+const FeaturedListProperty = () => {
   return (
     <div className="w-full text-center ">
-      <CustomHeader buttonTitle={"Category"} title={"Choose Our Category"} content={`Real estate can be bought, sold, leased, or rented, and can be a
-          valuable investment opportunity. The value of real estate can be...`}/>
+      <CustomHeader
+        buttonTitle={"Properties"}
+        title={"Featured Listed Property"}
+        content={
+          "Real estate can be bought, sold, leased, or rented, and can be a valuable investment opportunity. The value of real estate can be..."
+        }
+      />
+      <div className="flex justify-between text-blue-600 my-4 mx-24">
+        <div className="">
+          {buttonList.map((title) => (
+            <Button className="m-2 bg-slate-200  hover:text-white hover:bg-blue-600">
+              {title}
+            </Button>
+          ))}
+        </div>
+        <Button className="m-2 bg-slate-200  hover:text-white hover:bg-blue-600">
+            View All</Button>
+      </div>
       <div className="flex justify-center flex-wrap">
-        {categoryItems.map((item) => (
-          <CategoryItem
+        {FeaturedListPropertyItems.map((item) => (
+          <FeaturedList
             key={item.title}
             content={item.content}
             title={item.title}
             icon={item.icon}
           />
         ))}
-        <button className="w-64 group bg-green-400 hover:bg-green-800 hover:text-white h-64 rounded-full">
-          <h2 className="text-2xl font-semibold">25+</h2>
-          <p className=" font-medium p-2">
-            Explore properties and Invest width Confidence
-          </p>
-          <div className="w-14 mx-auto text-center py-3 group-hover:bg-orange-500 justify-center h-14 rounded-full bg-white">
-            hi
-          </div>
-        </button>
       </div>
     </div>
   );
 };
 
-export default Category;
+export default FeaturedListProperty;

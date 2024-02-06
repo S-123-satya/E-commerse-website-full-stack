@@ -64,7 +64,7 @@ const TopHeader = () => {
           content={info.content}
         />
       ))}
-      <Button>Submit Property</Button>
+      <Button className="bg-blue-700 text-white">Submit Property</Button>
     </div>
   );
 };

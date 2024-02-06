@@ -2,9 +2,7 @@ import React from "react";
 
 const Card = (props) => {
   return (
-    <div className={`rounded-lg bg-slate-50 ${props.className}`}>
-      {props.children}
-    </div>
+    <div className={`rounded-lg  ${props.className}`}>{props.children}</div>
   );
 };
 
